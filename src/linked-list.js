@@ -190,6 +190,28 @@ function createLinkedList() {
     }
   };
 
+  const removeAt = (index) => {
+    if (index >= size || index < 0) {
+      return;
+    }
+
+    let currNode = head;
+    let removedNode;
+
+    for (let i = 0; i < size; i++) {
+      if (i === index - 1) {
+        removedNode = currNode.nextNode;
+        const newNextNode = removedNode.nextNode;
+        currNode.nextNode = newNextNode;
+        size--;
+        break;
+      }
+      currNode = currNode.nextNode;
+    }
+
+    return removedNode;
+  };
+
   return {
     getHead,
     getTail,
@@ -202,6 +224,7 @@ function createLinkedList() {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 }
 
