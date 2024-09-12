@@ -54,11 +54,27 @@ function createLinkedList() {
         size++;
     };
     // at function, pop function,
+    const at = (index) => {
+        if (index >= size || index < 0) {
+            throw new Error("Index out of bound");
+        }
+
+        let currNode = head;
+
+        for (let i = 0; i < size; i++) {
+            if (index === i) {
+                let returnNode = currNode;
+                return returnNode;
+            }
+
+            currNode = currNode.nextNode;
+        }
+    }
     // contains function, find function,
     // and toString function,
     // also insertAt function and removeAtFunction
 
-    return {getHead, getTail, getSize, append, prepend};
+    return {getHead, getTail, getSize, append, prepend, at};
 }
 
 module.exports = {createLinkedList, createNode};

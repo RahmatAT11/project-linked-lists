@@ -8,7 +8,9 @@ linkedList.append(10);
 linkedList.append(20);
 linkedList.append([]);
 linkedList.prepend(0);
+linkedList.append(100);
 
 
 console.log(linkedList.getTail());
 console.log(linkedList.getHead());
+console.log(linkedList.at(6));
