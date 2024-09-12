@@ -116,10 +116,24 @@ function createLinkedList() {
         return false;
     };
 
+    const find = (value) => {
+        let currNode = head;
+
+        for (let i = 0; i < size; i++) {
+            if (currNode.value === value) {
+                return i;
+            }
+
+            currNode = currNode.nextNode;
+        }
+
+        return null;
+    }
+
     // and toString function,
     // also insertAt function and removeAtFunction
 
-    return {getHead, getTail, getSize, append, prepend, at, pop, contains};
+    return {getHead, getTail, getSize, append, prepend, at, pop, contains, find};
 }
 
 module.exports = {createLinkedList, createNode};
