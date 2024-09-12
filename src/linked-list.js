@@ -17,7 +17,12 @@ function createLinkedList() {
 
     // append function, prepend function,
     const append = (value) => {
+        if (value === typeof []) {
+            return;
+        }
+
         const newNode = createNode(value);
+
         if (head === null) {
             head = newNode;
             tail = head;
@@ -40,7 +45,12 @@ function createLinkedList() {
     };
 
     const prepend = (value) => {
+        if (value === typeof []) {
+            return;
+        }
+
         const newNode = createNode(value);
+
         if (head === null) {
             head = newNode;
             tail = head;
@@ -53,6 +63,7 @@ function createLinkedList() {
         head = newNode;
         size++;
     };
+
     // at function, pop function,
     const at = (index) => {
         if (index >= size || index < 0) {
@@ -69,7 +80,7 @@ function createLinkedList() {
 
             currNode = currNode.nextNode;
         }
-    }
+    };
 
     const pop = () => {
         let currNode = head;
@@ -88,12 +99,27 @@ function createLinkedList() {
 
         size--;
         return lastNode;
-    }
+    };
+
     // contains function, find function,
+    const contains = (value) => {
+        let currNode = head;
+
+        for (let i = 0; i < size; i++) {
+            if (currNode.value === value) {
+                return true;
+            }
+
+            currNode = currNode.nextNode;
+        }
+
+        return false;
+    };
+
     // and toString function,
     // also insertAt function and removeAtFunction
 
-    return {getHead, getTail, getSize, append, prepend, at, pop};
+    return {getHead, getTail, getSize, append, prepend, at, pop, contains};
 }
 
 module.exports = {createLinkedList, createNode};

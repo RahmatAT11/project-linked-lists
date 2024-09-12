@@ -9,3 +9,5 @@ linkedList.append(20);
 linkedList.append([]);
 linkedList.prepend(0);
 linkedList.append(100);
+
+console.log(linkedList.contains(100));
