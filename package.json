@@ -1,0 +1,15 @@
+{
+  "name": "project-linked-lists",
+  "version": "1.0.0",
+  "description": "An implementation of linked in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dsa",
+    "linked-list"
+  ],
+  "author": "Rahmat Alrafi Trikada",
+  "license": "ISC"
+}
