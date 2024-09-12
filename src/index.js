@@ -10,5 +10,4 @@ linkedList.append([]);
 linkedList.prepend(0);
 linkedList.append(100);
 
-console.log(linkedList.contains(100));
-console.log(linkedList.find(100));
+console.log(linkedList.toString());
