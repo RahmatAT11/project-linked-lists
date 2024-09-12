@@ -1,5 +1,12 @@
 // test linked list
 const LinkedListModule = require("./linked-list");
-const newLinkedList = LinkedListModule.createLinkedList(12);
+const linkedList = LinkedListModule.createLinkedList();
+linkedList.append(1);
+linkedList.append(2);
+linkedList.append(3);
+linkedList.append(10);
+linkedList.append(20);
+linkedList.append([]);
 
-console.log(newLinkedList);
+
+console.log(linkedList.getTail());
