@@ -38,12 +38,27 @@ function createLinkedList() {
         size++;
 
     };
+
+    const prepend = (value) => {
+        const newNode = createNode(value);
+        if (head === null) {
+            head = newNode;
+            tail = head;
+            size++;
+            return;
+        }
+
+        let currNode = head;
+        newNode.nextNode = currNode;
+        head = newNode;
+        size++;
+    };
     // at function, pop function,
     // contains function, find function,
     // and toString function,
     // also insertAt function and removeAtFunction
 
-    return {getHead, getTail, getSize, append};
+    return {getHead, getTail, getSize, append, prepend};
 }
 
 module.exports = {createLinkedList, createNode};
