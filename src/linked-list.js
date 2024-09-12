@@ -151,6 +151,44 @@ function createLinkedList() {
   };
 
   // also insertAt function and removeAtFunction
+  const insertAt = (value, index) => {
+    if (Array.isArray(value)) {
+      return;
+    }
+
+    if (index >= size || index < 0) {
+      return;
+    }
+
+    const newNode = createNode(value);
+
+    if (head === null) {
+      head = newNode;
+      tail = head;
+      size++;
+      return;
+    }
+
+    if (size <= 1) {
+      tail = newNode;
+      head.nextNode = tail;
+      size++;
+      return;
+    }
+
+    let currNode = head;
+
+    for (let i = 0; i < size; i++) {
+      if (i === index - 1) {
+        const newNextNode = currNode.nextNode;
+        newNode.nextNode = newNextNode;
+        currNode.nextNode = newNode;
+        size++;
+        break;
+      }
+      currNode = currNode.nextNode;
+    }
+  };
 
   return {
     getHead,
@@ -163,6 +201,7 @@ function createLinkedList() {
     contains,
     find,
     toString,
+    insertAt,
   };
 }
 
