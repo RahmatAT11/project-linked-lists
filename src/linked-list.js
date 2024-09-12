@@ -70,11 +70,30 @@ function createLinkedList() {
             currNode = currNode.nextNode;
         }
     }
+
+    const pop = () => {
+        let currNode = head;
+        let lastNode = tail;
+
+        for (let i = 0; i < size; i++) {
+            if (i !== size-2) {
+                currNode = currNode.nextNode;
+                continue;
+            }
+
+            currNode.nextNode = null;
+            tail = currNode;
+            break;
+        }
+
+        size--;
+        return lastNode;
+    }
     // contains function, find function,
     // and toString function,
     // also insertAt function and removeAtFunction
 
-    return {getHead, getTail, getSize, append, prepend, at};
+    return {getHead, getTail, getSize, append, prepend, at, pop};
 }
 
 module.exports = {createLinkedList, createNode};
