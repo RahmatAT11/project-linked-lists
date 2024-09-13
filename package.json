@@ -1,5 +1,5 @@
 {
-  "name": "linked-lists",
+  "name": "@terika/linked-lists",
   "version": "1.0.0",
   "description": "An implementation of linked in javascript",
   "main": "index.js",
@@ -12,5 +12,13 @@
     "linked-list"
   ],
   "author": "terika",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/RahmatAT11/project-linked-lists.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RahmatAT11/project-linked-lists/issues"
+  },
+  "homepage": "https://github.com/RahmatAT11/project-linked-lists#readme"
 }
