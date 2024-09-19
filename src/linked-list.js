@@ -199,6 +199,15 @@ function createLinkedList() {
     let removedNode;
 
     for (let i = 0; i < size; i++) {
+      if (index === 0) {
+        removedNode = currNode;
+        currNode = null;
+        head = null;
+        tail = null;
+        size--;
+        break;
+      }
+
       if (i === index - 1) {
         removedNode = currNode.nextNode;
         const newNextNode = removedNode.nextNode;
