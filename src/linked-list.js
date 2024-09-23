@@ -17,10 +17,6 @@ function createLinkedList() {
 
   // append function, prepend function,
   const append = (value) => {
-    if (Array.isArray(value)) {
-      return;
-    }
-
     const newNode = createNode(value);
 
     if (head === null) {
@@ -136,7 +132,13 @@ function createLinkedList() {
     let currNode = head;
 
     for (let i = 0; i < size; i++) {
-      let formatNodePrint = `( ${currNode.value} )`;
+      let formatNodePrint = "";
+      console.log(currNode.value);
+      if (Array.isArray(currNode.value)) {
+        formatNodePrint += `( ${currNode.value[1]} )`;
+      } else {
+        formatNodePrint += `( ${currNode.value} )`;
+      }
       if (currNode.nextNode) {
         formatNodePrint += " -> ";
       } else {
