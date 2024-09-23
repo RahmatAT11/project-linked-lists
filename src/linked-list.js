@@ -133,7 +133,6 @@ function createLinkedList() {
 
     for (let i = 0; i < size; i++) {
       let formatNodePrint = "";
-      console.log(currNode.value);
       if (Array.isArray(currNode.value)) {
         formatNodePrint += `( ${currNode.value[1]} )`;
       } else {
